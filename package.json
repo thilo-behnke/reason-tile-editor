@@ -1,0 +1,54 @@
+{
+  "name": "reason-tile-editor",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/electron-starter.js",
+  "dependencies": {
+    "@emotion/core": "^10.0.6",
+    "apollo-cache-inmemory": "^1.4.2",
+    "apollo-client": "^2.4.12",
+    "apollo-link": "^1.2.8",
+    "apollo-link-context": "^1.0.14",
+    "apollo-link-error": "^1.1.7",
+    "apollo-link-http": "^1.5.11",
+    "apollo-link-ws": "^1.0.14",
+    "apollo-upload-client": "^10.0.0",
+    "bs-css": "^8.0.0",
+    "electron": "^4.0.1",
+    "electron-packager": "^13.0.1",
+    "electron-winstaller": "^2.7.0",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
+    "react": "^16.7.0",
+    "react-apollo": "^2.4.1",
+    "react-dom": "^16.7.0",
+    "reason-apollo": "^0.15.2",
+    "reason-react": "^0.5.3",
+    "reason-scripts": "1.0.0",
+    "subscriptions-transport-ws": "^0.9.15"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "release": "electron-packager . snake --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=TB --version-string.FileDescription=TB --version-string.ProductName='Snake'",
+    "introspect": "node node_modules/graphql_ppx/sendIntrospectionQuery.js http://localhost:4000/graphql",
+    "bundle": "electron ."
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.7",
+    "bs-fetch": "^0.3.1",
+    "bs-platform": "^4.0.18",
+    "graphql_ppx": "^0.2.8"
+  }
+}
