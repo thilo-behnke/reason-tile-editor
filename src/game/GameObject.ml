@@ -42,6 +42,7 @@ module GameObject =
     let set_pos pos (_,props) = (pos,props)
     let get_style ((x,y),_) isActive = 
       let box_shadow = if isActive then boxShadow (`rgba (0, 0, 0, 0.75)) ~x:(`px 10) ~y:(`px 10) ~blur:(`px 5) else boxShadow (`rgba (0, 0, 0, 0.5)) ~x:(`px 5) ~y:(`px 5) ~blur:(`px 10) in
+      let z_index = if isActive then zIndex(120) else zIndex(100) in
       style
         [cursor(`pointer);
         width (`px 100);
@@ -50,7 +51,7 @@ module GameObject =
         box_shadow;
         transition "box-shadow" ~duration:(300) ~timingFunction: `easeInOut;
         border (`px 1) `solid (`rgba(0, 0, 0, 1.));
-        zIndex(100);
+        z_index;
         top (`px y);
         left (`px x);
         backgroundColor(`rgba (244, 0, 0, 1.))]
@@ -58,7 +59,7 @@ module GameObject =
       let s_str = match str with | Player -> "player" | _ -> "mouse" in
       let s_aug = match aug with | Wings -> "wings" | Spring -> "spring" | Jetpack -> "jetpack" | Hook -> "hook" | _ -> "boots" in
       let s_emo = match emo with | Fearful -> "fearful" | Aggressive -> "aggressive" | _ -> "indifferent" in
-      "Pos: " ^ string_of_int(x) ^ "," ^ string_of_int(y) ^ " / " ^ s_str ^ ", " ^ (s_aug) ^ ", " ^ (s_emo) ^ " (" ^ string_of_int(id) ^ ")"
+      "Pos: " ^ string_of_int(x) ^ "," ^ string_of_int(y) ^ " / " ^ s_str ^ ", " ^ (s_aug) ^ ", " ^ (s_emo) ^ " (" ^ string_of_int(id) ^ ") \n Drag Me!"
   end
 module ObjectList =
   struct

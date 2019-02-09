@@ -72,7 +72,7 @@ let make =
                 e =>
                   send(
                     SelectStructure(
-                      ReactEvent.Synthetic.nativeEvent(e)##value,
+                      ReactEvent.Synthetic.nativeEvent(e)##target##value,
                     ),
                   )
               )>
@@ -90,7 +90,7 @@ let make =
                 e =>
                   send(
                     SelectAugmentation(
-                      ReactEvent.Synthetic.nativeEvent(e)##value,
+                      ReactEvent.Synthetic.nativeEvent(e)##target##value,
                     ),
                   )
               )>

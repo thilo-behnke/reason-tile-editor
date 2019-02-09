@@ -5,7 +5,7 @@ include Utils
 type obj_attrs = {strs: string list; augs: string list; emos: string list}
 let load_tileset () = [Tile.create (0, 0) "grass"; Tile.create (0, 1) "ground"; Tile.create (0, 2) "rock"]
 let load_object_attrs (): obj_attrs =
-  {strs = ["mouse"]; augs = ["boots"; "wings"; "springs"; "jetpack"; "hook"]; emos= ["indifferent"; "fearful"; "aggressive"]}
+  {strs = ["mouse"; "elephant"]; augs = ["boots"; "wings"; "springs"; "jetpack"; "hook"]; emos= ["indifferent"; "fearful"; "aggressive"]}
 
 module Header = struct
   type userType =
@@ -22,5 +22,5 @@ module Header = struct
     | LoggedIn(nick, Free) -> "Hi, " ^ nick ^ " (free)"
     | LoggedIn(nick, Premium) -> "Hi, " ^ nick ^ " <star>"
   let get_obj_attrs (_,_,oa) = oa
-  let get_style _ = style[display `flex;]
+  let get_style _ = style[display `flex; ]
 end
