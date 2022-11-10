@@ -14,7 +14,7 @@
     "apollo-link-ws": "^1.0.14",
     "apollo-upload-client": "^10.0.0",
     "bs-css": "^8.0.0",
-    "electron": "^4.0.1",
+    "electron": "^18.3.7",
     "electron-packager": "^13.0.1",
     "electron-winstaller": "^2.7.0",
     "graphql": "^14.1.1",
